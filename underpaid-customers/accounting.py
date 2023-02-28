@@ -25,15 +25,6 @@ customer6_melons = 3
 customer6_paid = 2.00
 
 
-def compare_customer_expected_to_customer_paid(customer_name, num_melons, amt_paid, melon_cost=1):
-    """Takes in a customer name, number of melons purchased, amount paid, and melon cost (default value 1) and returns a string comparing the expected and actual amounts paid"""
-
-    expected_amt = num_melons * melon_cost
-
-    if expected_amt != amt_paid:
-        print(f'{customer_name}' paid ${amt_paid: .2f}, expected {expected_amt: .2f}')
-
-
 # customer1_expected = customer1_melons * melon_cost
 # if customer1_expected != customer1_paid:
 #     print(f"{customer1_name} paid ${customer1_paid:.2f},",
@@ -69,3 +60,37 @@ def compare_customer_expected_to_customer_paid(customer_name, num_melons, amt_pa
 #     print(f"{customer6_name} paid ${customer6_paid:.2f},",
 #           f"expected ${customer6_expected:.2f}"
 #           )
+
+def print_underpaid_customers(path, melon_cost=1):
+    """Given a path to the orders, produce a report of discrepencies between expected and actual payment
+
+    Opens the customer orders file at [path], parses each line for customer name, melons ordered, and total amount paid. Compares expected payment to actual payment per customer, and prints a readable report of customers who over or underpaid"""
+
+    # Create a file object from the string passed in as a path
+    the_file = open(path)
+
+    # Iterate over each line in the file
+    for line in the_file:
+        line = line.rstrip()  # Remove trailing whitespace from each line
+        words = line.split('|')  # Create a list of strings
+
+        # Assign a meaningful variable to each item from the words list
+        cust_num, cust_name, num_melons, amt_paid = words
+
+        # Change the number of melons and amount paid into floats
+        num_melons = float(num_melons)
+        amt_paid = float(amt_paid)
+
+        # Calculate the amount a customer should have paid (expected amount)
+        expected_amt = num_melons * melon_cost
+
+        # Compare the expected amount to the actual amount; if it differs, print that customer's information
+        if expected_amt != amt_paid:
+            print(
+                f'{cust_name} paid ${amt_paid: .2f}, expected ${expected_amt: .2f}')
+
+    # Close the file
+    the_file.close()
+
+
+print_underpaid_customers('customer-orders.txt')
