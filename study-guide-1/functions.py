@@ -161,11 +161,6 @@ def sign_and_parity(input_int):
     return [sign, parity]
 
 
-sign_of_5 = sign_and_parity(5)[0]
-parity_of_5 = sign_and_parity(5)[1]
-
-print(f'5 is {sign_of_5} and {parity_of_5}')
-
 ###############################################################################
 
 # PART TWO
@@ -173,6 +168,11 @@ print(f'5 is {sign_of_5} and {parity_of_5}')
 # 1. Write a function called full_title that takes a name and a job title as
 #    parameters, making it so the job title defaults to "Engineer" if a job
 #    title is not passed in. Return the person's title and name in one string.
+
+
+def full_title(name, job_title='Engineer'):
+    return f'{job_title.title()} {name.title()}'
+
 
 # 2. Write a function called write_letter that, given a recipient name & job
 #    title and a sender name, prints the following letter:
@@ -184,9 +184,15 @@ print(f'5 is {sign_of_5} and {parity_of_5}')
 #    greeting.
 
 
-###############################################################################
+def write_letter(recipient_name, job_title, sender_name):
+    title_and_name = full_title(name=recipient_name, job_title=job_title)
 
-# END OF PRACTICE: You can ignore everything below.
+    print(
+        f'Dear {title_and_name}, I think you are amazing! Sincerely, {sender_name}')
+
+    ###############################################################################
+
+    # END OF PRACTICE: You can ignore everything below.
 if __name__ == "__main__":
     import doctest
 
