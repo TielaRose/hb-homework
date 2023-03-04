@@ -17,7 +17,7 @@ def print_list(items):
         9
     """
 
-    for item in list:
+    for item in items:
         print(item)
 
 
@@ -77,7 +77,7 @@ def smallest_int(numbers):
         True
     """
 
-    if len(list) == 0:
+    if len(numbers) == 0:
         return None
 
     smallest_int = numbers[0]
@@ -106,7 +106,7 @@ def largest_int(numbers):
         True
     """
 
-    if len(list) == 0:
+    if len(numbers) == 0:
         return None
 
     largest_int = numbers[0]
@@ -265,7 +265,7 @@ def join_strings_with_comma(words):
         'Pretzel'
     """
 
-    return ""
+    return ', '.join(words)
 
 
 def reverse_list(items):
@@ -321,8 +321,6 @@ def reverse_list_in_place(items):
     for forward_index, _ in enumerate(items):
         items[forward_index] = list_copy[backwards_index]
         backwards_index -= 1
-
-    return items
 
 
 def duplicates(items):
