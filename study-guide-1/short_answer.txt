@@ -1,0 +1,149 @@
+Critical Topics from This Unit
+
+What is an algorithm? Provide some examples, both in the context in of computer science and beyond.
+    An algorithm is a repeatable set of steps you can follow to achieve a certain outcome. Examples include the algorithm to stack numbers and add them with regrouping, or a recipe.
+
+What is a heuristic? How do they relate to algorithms?
+    An approach to problem-solving that invoves trial and error, and may not be optimal, but is sufficient for reaching a short-term goal.
+
+What is the brute force method? What are some problems with it?
+    The brute force method is when you try to solve a problem by trying every possible answer instead of finding a way to narrow it down. For example, brute forcing a combination lock would mean trying every possible combination of the 3 numbers.
+
+What is version control? How is it different than simply saving a file?
+    Version control is a way to track and manage changes to a file (or set of files) that includes a historical record of what came before. When you save a file, the file is just at the current state. If you close it and reopen it, you can't go back to a previous (pre-save) version without manually undoing the changes you made. With version control, you can go back previous versions without losing the most recent version.
+
+What’s the difference between Git and Github?
+    Git is a version control prorgram that allows you to organize and track your file or folder's history. Github is an online platform that hosts your git repositories so they are not just on your computer.
+
+Git commands to know:
+
+git log - prints a log of commits to the console
+
+git init - initializes (starts) a git repository on your local device
+
+git status - shows the current status
+
+git add - adds a file to be tracked
+
+git commit with -a and -m - adds all untracked changes (for files that are being tracked), lets you add a message and commits the changes
+
+git remote add [name of repository] - connect your local git repository to a github hosted repository
+
+git remote -v - prints the address of the remote repository to the console
+
+git push - push commits on your local machine to your remote repository
+
+What does the file .gitignore do? What is the content of the .gitignore file?
+    this is a list of files that git will ignore that are untracked, so it doesn't yell at you every time you "git status" that they're not being tracked
+
+What are some files that git should generally ignore?
+    So far I only really know the __pycache__
+
+How can you tell whether a file is being ignored by git or not?
+    If it's in the .gitignore file, or you can use 'git check-ignore [filepath]'
+
+If you git add a secret file, is it possible to remove that file from the history of git?
+    Yes, seems like you can use the BFG Repo-Cleaner
+
+Why is using the command line important?
+    Right now, it's important because we will be expected to use it later, and we need to get familiar with it. Eventually, it will be faster and more efficient
+
+What is the prompt in the context of the command line?
+    The prompt is where the user inputs commands
+
+Shell commands to know:
+
+ls - list files in the current directory
+
+pwd - prints the path to the current directory
+
+cp - copy
+
+mv - move a file/directory (can also use it to rename)
+
+cd - change directory
+
+mkdir - create a new directory
+
+rm - remove (delete)
+
+man - print the manual page
+
+any command with --help - shows help for that command
+
+CTRL-D and CTRL-C - ctrl-d says this is the end, ctrl-c interrupts and stops what is running
+
+What’s the difference between relative and absolute paths?
+    a relative path is relative to where you currently are; an absolute path will be the same no matter where you are
+
+What’s the difference between parameters and arguments?
+    parameters are what are declared in a function declaration; arguments are what you pass in for those parameters when you call the function
+
+What’s the difference between return, break, and print?
+    return gives you a value at the end of a function; break breaks out of a block of code (but not necessarily the whole function), print prints to the console
+
+What does a function return if it doesn’t have a return statement?
+    None
+
+What is a default parameter?
+    A default parameter is the value that will be passed in as an argument if that parameter isn't explicitly declared in the function call
+
+What is scope? What is function scope?
+    Scope is the level at which a variable is available; for example, if a function is declared inside a function, it is available within that function, but does not exist outside it. That variable's scope is the function
+
+What are some important Python style considerations for writing functions?
+    Write docstrings, use variable and function names that are descriptive, use good spacing
+
+Python list methods/functions to know:
+
+sorted()
+
+.sort()
+
+.append()
+
+.extend()
+
+How to index a list
+
+How to slice a list
+
+How to loop over a list
+
+Using range(len(some_list))
+
+Using a counter and indexing the list
+
+Without using either of the above (just a for-loop)
+
+What is mutability? Whether something can be changed or not
+
+How is Python memory different than C memory? How are Python variables different than “classic” variables? You don't have to tell python how much memory you need for something ahead of time, or where to store it; Python figures that out for you. In C, you have to tell it where to store something. Python variables can also change type, so x could be 5 and then later a string. 
+
+What is garbage collection?
+    When Python frees up memory that isn't being used (sees that no variables are currently pointing to certain values, and so it gets rid of those values to make room for other things)
+
+What is the id function? What does the comparator is do in Python?
+    id shows the unique ID number for any value; is checks to see if things are the same (have the same id)
+
+What are sets good for?
+    holding unique items
+
+Set methods to know:
+
+.add()
+
+len()
+
+.remove()
+
+How to create a set =set()
+
+How to check if something is in a set
+
+What are tuples good for?
+
+How do you create a tuple?
+
+How to index a tuple
+
